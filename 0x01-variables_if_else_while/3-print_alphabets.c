@@ -5,22 +5,17 @@
  */
 int main(void)
 {
-	char c;
+	int i;
 
-	char d;
+for (i = 0; i < 26; i++)
+{
+putchar('a' + i);
+}
 
-	c = 'a';
-	d = 'A';
-	while
-		(c <= 'z') {
-			putchar(c);
-			c++;
-		}
-	while
-		(c <= 'z') {
-			putchar(d);
-			d++;
-		}
-	putchar('\n');
-	return (0);
+for (i = 0; i < 26; i++)
+{
+putchar('A' + i);
+}
+putchar('\n');
+return (0);
 }
