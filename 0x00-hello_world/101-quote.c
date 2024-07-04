@@ -1,8 +1,11 @@
 #include<stdio.h>
 #include<unistd.h>
 
-/*
+/**
  * main - A c program that prints a line to the standard error
+ *
+ * This function prints a specific message to the standard output
+ *
  * Return: 1 (Success)
  */
 
