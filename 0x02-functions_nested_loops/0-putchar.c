@@ -1,4 +1,8 @@
 #include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include "main.h"
 /**
  * main - Prints _putchar
  * Return: 0 (Success)
