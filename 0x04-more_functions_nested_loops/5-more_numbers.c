@@ -9,21 +9,17 @@
 
 void more_numbers(void)
 {
-	int num, times;
+	int x, y;
 
-	for (times = 0; times < 10; times++)
+	for (x = 0; x < 10; x++)
 	{
-		for (num = 0; num <= 14; num++)
+		for (y = 0; y <= 14; y++)
 		{
-			if (num < 10)
+			if (y > 9)
 			{
-			_putchar(num + '0'); /*Prints the single digits*/
+				_putchar((y / 10) + '0');
 			}
-			else
-			{
-				_putchar('1'); /*Print 1 for numbers 10 to 14*/
-				_putchar(num % 10 + '0'); /*Prints the unit digits of 10 to 14*/
-			}
+			_putchar((y % 10) + '0');
 		}
 		_putchar('\n');
 	}
