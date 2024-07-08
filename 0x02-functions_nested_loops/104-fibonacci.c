@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 /**
  * main - Prints the first 98 Fibonacci numbers, separated by comma and space
@@ -7,15 +8,16 @@
 
 int main(void)
 {
-	unsigned long fib1 = 1, fib2 = 2, next_fib;
-	int count;
+	unsigned long long fib1 = 1, fib2 = 2;
+	unsigned long long next_fib;
 
-	printf("%lu, %lu", fib1, fib2);  /*Print the first two Fibonacci numbers*/
+	printf("%llu, %llu", fib1, fib2);
 
-	for (count = 3; count <= 98; ++count)
+	for (int count = 3; count <= 98; ++count)
 	{
 		next_fib = fib1 + fib2;
-		printf(", %lu", next_fib);
+
+		printf(", %llu", next_fib);
 
 		fib1 = fib2;
 		fib2 = next_fib;
