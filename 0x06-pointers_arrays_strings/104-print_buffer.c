@@ -1,50 +1,55 @@
 #include "main.h"
 #include <stdio.h>
+
 /**
- * print_buffer - Prints a buffer 10 bytes at a time with the byte position
- * then showing the hex content,
- * then displaying printable characters.
- * @b: The buffer to be printed
- * @size: The number of bytes to be printed from the buffer
+ * print_buffer - main function
+ *
+ * @b: The buffer.
+ *
+ * @size: size of buffer
+ *
+ * Return: 0
  */
+
 void print_buffer(char *b, int size)
 {
-	int byte, idx;
+	int x;
+	int y;
+	int z;
 
-	for (byte = 0; byte < size; byte += 10)
+	x = 0;
+
+	if (size <= 0)
 	{
-		printf("%08x: ", byte);
+	printf("\n");
+	return;
+	}
+	while (x < size)
+	{
+	y = size - x < 10 ? size - x : 10;
+	printf("%08x: ", x);
+	for (z = 0; z < 10; z++)
+	{
+	if (z < y)
+	printf("%02x", *(b + x + z));
+	else
+	printf("  ");
+	if (z % 2)
+	{
+	printf(" ");
+	}
+	}
+	for (z = 0; z < y; z++)
+	{
+	int c = *(b + x + z);
 
-		for (idx = 0; idx < 10; idx++)
-		{
-			if ((idx + byte) >= size)
-				printf(" ");
-
-			else
-				printf("%02x", *(b + idx + byte));
-
-			if ((idx % 2) != 0 && idx != 0)
-				printf(" ");
-		}
-
-		for (idx = 0; idx < 10; idx++)
-		{
-			if ((idx + byte) >= size)
-				break;
-
-			else if (*(b + idx + byte) >= 31 && *(b + idx + byte) <= 126)
-				printf("%c", *(b + idx + byte));
-
-			else
-				printf(".");
-		}
-
-		if (byte >= size)
-			continue;
-
-		printf("\n");
-
-		if (size <= 0)
-			printf("\n");
+	if (c < 32 || c > 132)
+	{
+	c = '.';
+	}
+	printf("%c", c);
+	}
+	printf("\n");
+	x += 10;
 	}
 }
